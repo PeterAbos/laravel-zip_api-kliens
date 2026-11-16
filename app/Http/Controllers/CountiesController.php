@@ -90,7 +90,9 @@ class CountiesController extends Controller
     {
         $url = "/counties/$id";
 
-        $response = Http::api()->put($url, $request->all());
+        $response = Http::api()
+            ->withToken(session('api_token'))
+            ->put($url, $request->all());
 
         if ($response->failed()) {
             return redirect()->route('counties.index');
