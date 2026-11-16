@@ -32,7 +32,7 @@ class CountiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('counties.create');
     }
 
     /**
@@ -40,7 +40,17 @@ class CountiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $url = "/counties";
+
+        $response = Http::api()
+            ->withToken(session('api_token'))
+            ->post($url, $request->all());
+
+        if ($response->failed()) {
+            return redirect()->route('counties.index');
+        }
+
+        return redirect()->route('counties.index');
     }
 
     /**

@@ -12,6 +12,7 @@
     <div class="success-message">{{  __('messages.success-error') }}</div>
 @endif
 
+<a href="{{ route('counties.create') }}">{{ __('texts.create-county') }}</a>
 <table class="table-datas">
     <tr>
         <th>#</th>
