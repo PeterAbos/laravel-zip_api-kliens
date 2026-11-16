@@ -6,7 +6,7 @@
 
 <a href="{{ route('counties.index') }}">{{ __('buttons.back') }}</a>
 
-<form action="{{ route('counties.update', $county->id) }}" method="get" class="form-style">
+<form action="{{ route('counties.update', $county->id) }}" method="post" class="form-style">
     @csrf
     @method('PUT')
     <fieldset>
