@@ -116,7 +116,17 @@ class CountiesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $url = "/counties/$id";
+
+        $response = Http::api()
+            ->withToken(session('api_token'))
+            ->delete($url);
+
+        if ($response->failed()) {
+            return redirect()->route('counties.index')->with('delete-error');
+        }
+
+        return redirect()->route('counties.index')->with('delete-success');
     }
 
     private function getCounties($response)

@@ -6,5 +6,7 @@ return [
     'login' => 'Login',
     'logout' => 'Logout',
     'edit-error' => 'There was an update error!',
-    'edit-success' => 'Datas successfully updated!'
+    'edit-success' => 'Datas successfully updated!',
+    'delete-error' => 'Delete error',
+    'delete-success' => 'Successfully deleted'
 ];

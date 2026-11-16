@@ -9,7 +9,15 @@
 @endif
 
 @if (session('edit-success'))
-    <div class="success-message">{{  __('messages.success-error') }}</div>
+    <div class="success-message">{{  __('messages.edit-success') }}</div>
+@endif
+
+@if (session('delete-error'))
+    <div class="error-message">{{  __('messages.delete-error') }}</div>
+@endif
+
+@if (session('delete-success'))
+    <div class="success-message">{{  __('messages.delete-success') }}</div>
 @endif
 
 <a href="{{ route('counties.create') }}">{{ __('texts.create-county') }}</a>
