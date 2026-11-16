@@ -1,0 +1,72 @@
+.nav-buttons {
+    text-decoration-line: none;
+    border: 1px solid black;
+    color: black;
+    padding: 3px;
+    margin: 2px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.nav-buttons:hover {
+    background-color: yellow;
+}
+
+header {
+    background-color: orange;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+body {
+    background-color: aqua;
+}
+
+main {
+    background-color: orange;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    width: max-content;
+    min-width: 50%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 0px;
+}
+
+.table-datas {
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: beige;
+}
+
+.table-datas td {
+    border: 1px solid black;
+}
+
+.form-style {
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.error-message {
+    padding: 10px;
+    font-weight: bold;
+    background-color: lightcoral;
+}
+.success-message {
+    padding: 10px;
+    font-weight: bold;
+    background-color: greenyellow;
+}
