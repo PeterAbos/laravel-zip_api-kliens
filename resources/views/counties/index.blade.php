@@ -4,21 +4,14 @@
 
 <h1>{{ __('counties.title') }}</h1>
 
-@if (session('edit-error'))
-    <div class="error-message">{{  __('messages.edit-error') }}</div>
+@if (session('error'))
+    <div class="error-message">{{ session('error') }}</div>
 @endif
 
-@if (session('edit-success'))
-    <div class="success-message">{{  __('messages.edit-success') }}</div>
+@if (session('success'))
+    <div class="success-message">{{ session('success') }}</div>
 @endif
 
-@if (session('delete-error'))
-    <div class="error-message">{{  __('messages.delete-error') }}</div>
-@endif
-
-@if (session('delete-success'))
-    <div class="success-message">{{  __('messages.delete-success') }}</div>
-@endif
 
 <a href="{{ route('counties.create') }}">{{ __('texts.create-county') }}</a>
 <table class="table-datas">

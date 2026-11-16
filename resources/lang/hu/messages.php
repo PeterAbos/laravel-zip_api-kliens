@@ -8,5 +8,7 @@ return [
     'edit-error' => 'Hiba történt az adatok frissítésekor!',
     'edit-success' => 'Adatok sikeresen frissítve',
     'delete-error' => 'Hiba a törlés közben',
-    'delete-success' => 'Sikeresen törölve'
+    'delete-success' => 'Sikeresen törölve',
+    'create-error' => 'Hiba hozzáadsnál',
+    'create-success' => 'Adatok hozzáadva'
 ];

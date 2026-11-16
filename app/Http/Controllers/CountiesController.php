@@ -47,10 +47,10 @@ class CountiesController extends Controller
             ->post($url, $request->all());
 
         if ($response->failed()) {
-            return redirect()->route('counties.index');
+            return redirect()->route('counties.index')->with('error', __('messages.create-error'));
         }
 
-        return redirect()->route('counties.index');
+        return redirect()->route('counties.index')->with('error', __('messages.create-success'));
     }
 
     /**
@@ -105,10 +105,10 @@ class CountiesController extends Controller
             ->put($url, $request->all());
 
         if ($response->failed()) {
-            return redirect()->route('counties.index');
+            return redirect()->route('counties.index')->with('error', __('messages.edit-error'));
         }
         
-        return redirect()->route('counties.index');
+        return redirect()->route('counties.index')->with('success', __('edit-success'));
     }
 
     /**
@@ -123,10 +123,10 @@ class CountiesController extends Controller
             ->delete($url);
 
         if ($response->failed()) {
-            return redirect()->route('counties.index')->with('delete-error');
+            return redirect()->route('counties.index')->with('error', __('messages.delete-error'));
         }
 
-        return redirect()->route('counties.index')->with('delete-success');
+        return redirect()->route('counties.index')->with('success', __('messages.delete-success'));
     }
 
     private function getCounties($response)

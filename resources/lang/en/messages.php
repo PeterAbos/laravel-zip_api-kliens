@@ -8,5 +8,7 @@ return [
     'edit-error' => 'There was an update error!',
     'edit-success' => 'Datas successfully updated!',
     'delete-error' => 'Delete error',
-    'delete-success' => 'Successfully deleted'
+    'delete-success' => 'Successfully deleted',
+    'create-error' => 'Create error',
+    'create-success' => 'Datas added'
 ];
