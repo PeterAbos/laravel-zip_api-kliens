@@ -126,13 +126,13 @@ class CitiesController extends Controller
 
         $response = Http::api()
             ->withToken(session('api_token'))
-            ->post($url, $request->all());
+            ->put($url, $request->all());
 
         if ($response->failed()) {
-            return redirect()->route('cities.index')->with('error', __('messages.create-error'));
+            return redirect()->route('cities.index')->with('error', __('messages.edit-error'));
         }
 
-        return redirect()->route('cities.index')->with('success', __('messages.create-success'));
+        return redirect()->route('cities.index')->with('success', __('messages.edit-success'));
     }
 
     /**
