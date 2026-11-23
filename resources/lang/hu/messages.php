@@ -5,6 +5,7 @@ return [
     'welcome' => 'Üdvözlet!',
     'login' => 'Bejelentkezés',
     'logout' => 'Kijelentkezés',
+    'load-error' => 'Hiba történt az adatok lekérdezése során!',
     'edit-error' => 'Hiba történt az adatok frissítésekor!',
     'edit-success' => 'Adatok sikeresen frissítve',
     'delete-error' => 'Hiba a törlés közben',
