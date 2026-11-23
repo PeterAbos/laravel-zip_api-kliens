@@ -90,7 +90,31 @@ class CitiesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $url = "/cities/$id";
+
+        $response = Http::api()->get($url);
+
+        if ($response->failed()) {
+            return redirect()
+                ->route('cities.index')
+                ->with('error', __('messages.load-error'));
+        }
+
+        $city = $this->getCity($response);
+
+        $url = "/counties";
+
+        $response = Http::api()->get($url);
+
+        if ($response->failed()) {
+            return redirect()
+                ->route('cities.index')
+                ->with('error', __('messages.load-error'));
+        }
+
+        $counties = $this->getCounties($response);
+
+        return view('cities.edit', compact('city', 'counties'));
     }
 
     /**
