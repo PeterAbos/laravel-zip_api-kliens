@@ -13,6 +13,20 @@
 @endif
 
 <a href="{{ route('cities.create') }}">{{ __('texts.create-city') }}</a>
+
+<div class="search-bar">
+    <form method="get" action="{{ route('cities.index') }}" class="search-form">
+      <select name="county" id="county">
+        <option value="" {{ request('county') ? "" : "selected" }}> --- </option>
+        @foreach ($counties as $county)
+            <option value="{{ $county->id }}" {{ $county->id == request('county') ? "selected" : "" }}>{{ $county->name }}</option>
+        @endforeach
+      </select>
+      <input type="search" name="search" value="{{ request('search') }}" placeholder="Keresés">
+      <button type="submit" title="Keres">Keres</button>
+    </form>
+</div>
+
 <table class="table-datas">
     <tr>
         <th>#</th>

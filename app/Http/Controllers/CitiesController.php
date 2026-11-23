@@ -10,9 +10,12 @@ class CitiesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $url = "/cities";
+        $search = $request->input('search');
+        $county = $request->input('county');
+
+        $url = "/cities?search=$search&county=$county";
 
         $response = Http::api()->get($url);
 
@@ -24,7 +27,20 @@ class CitiesController extends Controller
 
         $cities = $this->getCities($response);
 
-        return view('cities.index', compact('cities'));
+        // counties a szűréshez
+        $url = "/counties";
+
+        $response = Http::api()->get($url);
+
+        if ($response->failed()) {
+            return redirect()
+                ->route('/')
+                ->with('error', __('messages.load-error'));
+        }
+
+        $counties = $this->getCounties($response);
+
+        return view('cities.index', compact('cities', 'counties'));
     }
 
     /**
