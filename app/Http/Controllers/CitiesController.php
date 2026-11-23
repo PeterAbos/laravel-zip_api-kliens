@@ -122,7 +122,17 @@ class CitiesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $url = "/cities/$id";
+
+        $response = Http::api()
+            ->withToken(session('api_token'))
+            ->post($url, $request->all());
+
+        if ($response->failed()) {
+            return redirect()->route('cities.index')->with('error', __('messages.create-error'));
+        }
+
+        return redirect()->route('cities.index')->with('success', __('messages.create-success'));
     }
 
     /**
