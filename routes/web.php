@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountiesController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +10,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('counties', CountiesController::class);
+Route::resource('cities', CitiesController::class);
 
 Route::get('/set-locale/{locale}', function ($locale) {
     session(['locale' => $locale]);

@@ -15,6 +15,7 @@
         </select>
         <a href="{{  route('/') }}" class="nav-buttons">{{ __('headers.home') }}</a>
         <a href="{{ route('counties.index') }}" class="nav-buttons">{{ __('counties.title') }}</a>
+        <a href="{{ route('cities.index') }}" class="nav-buttons">{{ __('cities.title') }}</a>
 
         @if (session('api_token'))
             <form action="{{ route('logout') }}" method="post">
