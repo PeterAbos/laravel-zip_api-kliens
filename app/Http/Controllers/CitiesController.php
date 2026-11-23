@@ -140,7 +140,17 @@ class CitiesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $url = "/cities/$id";
+
+        $response = Http::api()
+            ->withToken(session('api_token'))
+            ->delete($url);
+
+        if ($response->failed()) {
+            return redirect()->route('cities.index')->with('error', __('messages.delete-error'));
+        }
+
+        return redirect()->route('cities.index')->with('success', __('messages.delete-success'));
     }
 
     private function getCities($response)
