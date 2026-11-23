@@ -9,6 +9,6 @@ return [
     'edit-success' => 'Adatok sikeresen frissítve',
     'delete-error' => 'Hiba a törlés közben',
     'delete-success' => 'Sikeresen törölve',
-    'create-error' => 'Hiba hozzáadsnál',
+    'create-error' => 'Hiba hozzáadásnál',
     'create-success' => 'Adatok hozzáadva'
 ];

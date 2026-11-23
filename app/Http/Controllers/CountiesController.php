@@ -50,7 +50,7 @@ class CountiesController extends Controller
             return redirect()->route('counties.index')->with('error', __('messages.create-error'));
         }
 
-        return redirect()->route('counties.index')->with('error', __('messages.create-success'));
+        return redirect()->route('counties.index')->with('success', __('messages.create-success'));
     }
 
     /**
@@ -108,7 +108,7 @@ class CountiesController extends Controller
             return redirect()->route('counties.index')->with('error', __('messages.edit-error'));
         }
         
-        return redirect()->route('counties.index')->with('success', __('edit-success'));
+        return redirect()->route('counties.index')->with('success', __('messages.edit-success'));
     }
 
     /**
