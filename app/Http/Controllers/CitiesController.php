@@ -32,7 +32,19 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        //
+        $url = "/counties";
+
+        $response = Http::api()->get($url);
+
+        if ($response->failed()) {
+            return redirect()
+                ->route('cities.index')
+                ->with('error', "Hiba történt az adatok lekérdezése során.");
+        }
+
+        $counties = $this->getCounties($response);
+
+        return view('cities.create', compact('counties'));
     }
 
     /**
@@ -85,5 +97,11 @@ class CitiesController extends Controller
     {
         $body = json_decode($response->body(), false);
         return $body ?? null;
+    }
+
+    private function getCounties($response)
+    {
+        $body = json_decode($response->body(), false);
+        return $body->counties ?? [];
     }
 }

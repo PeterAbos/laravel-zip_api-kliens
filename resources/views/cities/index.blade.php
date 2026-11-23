@@ -12,6 +12,7 @@
     <div class="success-message">{{ session('success') }}</div>
 @endif
 
+<a href="{{ route('cities.create') }}">{{ __('texts.create-city') }}</a>
 <table class="table-datas">
     <tr>
         <th>#</th>
